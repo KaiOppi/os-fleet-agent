@@ -18,9 +18,9 @@ mkdir -p "$STAGE/usr/local"
 cp -a "$PLUGIN_DIR/src/opnsense" "$STAGE/usr/local/"
 chmod +x "$STAGE/usr/local/opnsense/scripts/OPNsense/Fleet/agent.py"
 
-# pkg-plist
+# pkg-plist — paths relative to prefix (/usr/local)
 PLIST="$STAGE/pkg-plist"
-( cd "$STAGE" && find usr -type f | sort ) > "$PLIST"
+( cd "$STAGE/usr/local" && find . -type f | sed 's|^\./||' | sort ) > "$PLIST"
 
 # Manifest
 cat > "$STAGE/+MANIFEST" <<EOF
