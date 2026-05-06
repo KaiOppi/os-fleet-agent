@@ -1,0 +1,50 @@
+<form>
+    <field>
+        <id>fleet.general.enabled</id>
+        <label>Enable Agent</label>
+        <type>checkbox</type>
+        <help>Aktiviere den Agent: registriert einen Cron-Job, der periodisch Status zur os-fleet-Instanz pusht.</help>
+    </field>
+    <field>
+        <id>fleet.general.server_url</id>
+        <label>os-fleet Server URL</label>
+        <type>text</type>
+        <help>Vollständige URL inkl. Schema und Port, z.B. <code>https://os-fleet.example.com:8080</code>.</help>
+    </field>
+    <field>
+        <id>fleet.general.agent_token</id>
+        <label>Agent Token</label>
+        <type>text</type>
+        <help>Vom os-fleet-Admin erzeugt unter <em>Boxen → neue Box → Mode = Push</em>.</help>
+    </field>
+    <field>
+        <id>fleet.general.verify_tls</id>
+        <label>TLS-Verify</label>
+        <type>checkbox</type>
+        <help>Server-Zertifikat validieren (für self-signed Zertifikate deaktivieren).</help>
+    </field>
+    <field>
+        <id>fleet.general.interval_minutes</id>
+        <label>Sync-Intervall (Minuten)</label>
+        <type>text</type>
+        <help>Wie oft der Agent Daten an den Server schickt. Default: 5 Minuten.</help>
+    </field>
+    <field>
+        <id>fleet.general.local_api_key</id>
+        <label>Local API Key</label>
+        <type>text</type>
+        <help>OPNsense-API-Key dieser Box. Erzeugbar unter <em>System → Access → Users → root → API keys</em>. Der Agent nutzt ihn, um die lokalen Endpoints (firmware, certs) abzufragen.</help>
+    </field>
+    <field>
+        <id>fleet.general.local_api_secret</id>
+        <label>Local API Secret</label>
+        <type>password</type>
+        <help>Zugehöriges Secret.</help>
+    </field>
+    <field>
+        <id>fleet.general.local_api_url</id>
+        <label>Local API URL (override)</label>
+        <type>text</type>
+        <help>Nur setzen, wenn auf Port 443 nicht die OPNsense-WebUI läuft (z.B. HAProxy). Beispiel: <code>https://127.0.0.1:4444</code>. Leer = Default <code>https://127.0.0.1</code>.</help>
+    </field>
+</form>

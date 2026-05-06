@@ -1,0 +1,23 @@
+{
+    "name": "os-fleet-agent",
+    "version": "0.0.11",
+    "origin": "opnsense/os-fleet-agent",
+    "comment": "os-fleet push-mode agent",
+    "maintainer": "info@it-service-nf.de",
+    "www": "https://github.com/KaiOppi/os-fleet-agent",
+    "abi": "FreeBSD:14:amd64",
+    "arch": "FreeBSD:14:amd64",
+    "prefix": "/usr/local",
+    "licenselogic": "single",
+    "licenses": ["BSD2CLAUSE"],
+    "deps": {},
+    "categories": ["sysutils", "net-mgmt"],
+    "annotations": {
+        "product_id": "os-fleet-agent",
+        "product_name": "os-fleet-agent",
+        "product_tier": 3,
+        "product_version": "0.0.11",
+        "FreeBSD_version": "1402000",
+        "product_abi": "26.1"
+    }
+}

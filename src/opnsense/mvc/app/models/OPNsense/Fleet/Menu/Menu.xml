@@ -1,0 +1,7 @@
+<menu>
+    <Services>
+        <Fleet VisibleName="Fleet Agent" cssClass="bi-broadcast" url="/ui/fleet/index">
+            <Settings VisibleName="Settings" url="/ui/fleet/index"/>
+        </Fleet>
+    </Services>
+</menu>

@@ -1,0 +1,10 @@
+<acl>
+    <page-fleet-agent>
+        <name>Fleet: Agent</name>
+        <description>os-fleet-agent settings</description>
+        <patterns>
+            <pattern>ui/fleet/*</pattern>
+            <pattern>api/fleet/*</pattern>
+        </patterns>
+    </page-fleet-agent>
+</acl>

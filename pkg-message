@@ -1,0 +1,13 @@
+os-fleet-agent installed.
+
+Next steps:
+  1. On the os-fleet server, add this OPNsense as a push-mode box
+     (Boxen → "Box hinzufügen" → Mode: Push). Copy the agent_token.
+  2. Open Services → Fleet Agent → Settings on this OPNsense.
+  3. Paste server URL + agent_token, set local API key/secret of any
+     local user with read access to firmware/cert/config endpoints.
+  4. Click "Test connection" then enable + "Send now".
+  5. Add a Cron entry (System → Settings → Cron) running
+     "os-fleet-agent" every 5 minutes (or whichever interval suits).
+
+Documentation: https://github.com/KaiOppi/os-fleet

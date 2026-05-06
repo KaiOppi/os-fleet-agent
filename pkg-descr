@@ -1,0 +1,10 @@
+os-fleet-agent — push-mode agent for the os-fleet
+multi-OPNsense management platform.
+
+Periodically collects local system status (firmware, plugins,
+certificates, firewall configuration) from this OPNsense and ships it
+to a configured os-fleet server via outbound HTTPS. No inbound
+connections to this box are required: ideal for OPNsense instances
+behind NAT, dynamic IPs, or strict customer-side firewalls.
+
+WWW: https://github.com/KaiOppi/os-fleet-agent

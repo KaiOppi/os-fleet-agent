@@ -1,0 +1,53 @@
+<model>
+    <mount>//OPNsense/Fleet</mount>
+    <description>os-fleet-agent settings</description>
+    <version>0.0.1</version>
+    <items>
+        <general>
+            <enabled type="BooleanField">
+                <default>0</default>
+                <Required>Y</Required>
+            </enabled>
+            <server_url type="UrlField">
+                <Required>N</Required>
+                <ValidationMessage>URL der os-fleet-Instanz, z.B. https://os-fleet.example.com:8080</ValidationMessage>
+            </server_url>
+            <agent_token type="TextField">
+                <Required>N</Required>
+                <Mask>/^[A-Za-z0-9_-]*$/u</Mask>
+                <ValidationMessage>Token darf nur a-z 0-9 _ - enthalten</ValidationMessage>
+            </agent_token>
+            <verify_tls type="BooleanField">
+                <default>1</default>
+                <Required>Y</Required>
+            </verify_tls>
+            <interval_minutes type="IntegerField">
+                <default>5</default>
+                <MinimumValue>1</MinimumValue>
+                <MaximumValue>1440</MaximumValue>
+                <Required>Y</Required>
+            </interval_minutes>
+            <local_api_key type="TextField">
+                <Required>N</Required>
+                <ValidationMessage>OPNsense-eigener API-Key (von einem User dieser Box)</ValidationMessage>
+            </local_api_key>
+            <local_api_secret type="TextField">
+                <Required>N</Required>
+            </local_api_secret>
+            <local_api_url type="TextField">
+                <Required>N</Required>
+                <Mask>/^(https?:\/\/[A-Za-z0-9_.\-]+(:\d+)?)?$/u</Mask>
+                <ValidationMessage>Override für die lokale OPNsense-API (Default: https://127.0.0.1). Setzen, wenn auf Port 443 ein anderer Service (z.B. HAProxy) läuft.</ValidationMessage>
+            </local_api_url>
+            <last_run type="TextField">
+                <Required>N</Required>
+            </last_run>
+            <last_status type="TextField">
+                <Required>N</Required>
+            </last_status>
+            <last_message type="TextField">
+                <Required>N</Required>
+            </last_message>
+        </general>
+    </items>
+</model>
