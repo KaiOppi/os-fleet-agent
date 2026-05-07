@@ -1,6 +1,6 @@
 {
     "name": "os-fleet-agent",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "origin": "opnsense/os-fleet-agent",
     "comment": "os-fleet push-mode agent",
     "maintainer": "info@it-service-nf.de",
@@ -16,7 +16,7 @@
         "product_id": "os-fleet-agent",
         "product_name": "os-fleet-agent",
         "product_tier": 3,
-        "product_version": "0.0.11",
+        "product_version": "0.0.12",
         "FreeBSD_version": "1402000",
         "product_abi": "26.1"
     }

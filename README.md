@@ -19,7 +19,7 @@ The agent periodically collects:
 In the OPNsense shell (Console → option 8):
 
 ```sh
-pkg add https://github.com/KaiOppi/os-fleet-agent/releases/download/v0.0.11/os-fleet-agent-0.0.11.pkg
+pkg add https://github.com/KaiOppi/os-fleet-agent/releases/download/v0.0.12/os-fleet-agent-0.0.11.pkg
 ```
 
 Then in the WebGUI under **Services → Fleet Agent**:

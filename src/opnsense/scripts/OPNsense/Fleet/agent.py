@@ -33,7 +33,7 @@ import urllib.error
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
-VERSION = "0.0.11"
+VERSION = "0.0.12"
 CONFIG_PATH = "/conf/config.xml"
 
 # Optional env-overrides loaded before any feature flag is read.
@@ -576,16 +576,23 @@ def _normalize(s: str) -> str:
     return (s or "").strip()
 
 
+def _flag(elem):
+    """OPNsense boolean idiom: <foo>1</foo> AND empty <foo/> both mean
+    'true'. Absence or any other text means 'false'. Must match the
+    server's _flag() exactly so legacy_rule_hash agrees on both ends."""
+    if elem is None:
+        return False
+    txt = (elem.text or "").strip()
+    return txt == "1" or txt == ""
+
+
 def _addr_render(elem):
     """Mirror of the server's _addr_block — must produce identical
     strings for the hash to match across both ends."""
     if elem is None:
         return ("", "")
-    not_flag = ""
-    n = elem.find("not")
-    if n is not None and (n.text or "").strip() == "1":
-        not_flag = "!"
-    if elem.find("any") is not None and (elem.find("any").text or "").strip() == "1":
+    not_flag = "!" if _flag(elem.find("not")) else ""
+    if elem.find("any") is not None and _flag(elem.find("any")):
         host = "any"
     elif elem.find("address") is not None:
         host = (elem.find("address").text or "?").strip()
